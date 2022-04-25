@@ -13,9 +13,9 @@ int check_cycle(listint_t *list)
 	tmp = list;
 	while (tmp->next && tmp)
 	{
+		tmp = tmp->next;
 		if (tmp->next == list)
 			return (1);
-		tmp = tmp->next;
 	}
 	return (0);
 }
