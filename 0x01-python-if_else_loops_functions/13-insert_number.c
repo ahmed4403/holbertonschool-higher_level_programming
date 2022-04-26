@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 /**
  * insert_node - check the code for
  * @head: start of linked list
