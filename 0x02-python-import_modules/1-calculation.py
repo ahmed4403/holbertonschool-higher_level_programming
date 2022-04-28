@@ -7,10 +7,10 @@ def main():
 
 
 if __name__ == "__main__":
-    num1 = 10
-    num2 = 5
-    print(f"{num1} + {num2} = {add(num1, num2)}")
-    print(f"{num1} - {num2} = {sub(num1, num2)}")
-    print(f"{num1} * {num2} = {mul(num1, num2)}")
-    print(f"{num1} / {num2} = {div(num1, num2)}")
+    a = 10
+    b = 5
+    print(f"{a} + {b} = {add(a, b)}")
+    print(f"{a} - {b} = {sub(a, b)}")
+    print(f"{a} * {b} = {mul(a, b)}")
+    print(f"{a} / {b} = {div(a, b)}")
     main()

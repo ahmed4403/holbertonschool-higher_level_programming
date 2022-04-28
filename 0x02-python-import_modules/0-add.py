@@ -7,7 +7,7 @@ def main():
 
 
 if __name__ == "__main__":
-    one = 1
-    two = 2
-    print(f"{one} + {two} = {add(one, two)}")
+    a = 1
+    b = 2
+    print(f"{a} + {b} = {add(a, b)}")
     main()
