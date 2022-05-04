@@ -31,5 +31,6 @@ def roman_to_int(roman_string):
                 result -= 200
             if j == "C" and roman_string[index + 1:2] == "M":
                 result -= 200
+            index += 1
         return result
     return 0
