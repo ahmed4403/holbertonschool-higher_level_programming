@@ -14,6 +14,12 @@ class Square:
         line of text
         '''
         self.__size = size
+        if type(position) is not tuple or len(position) != 2 or position[0] < 0:
+               raise TypeError('position must be a tuple of 2 positive integers')
+        if position[1] < 0 or type(position[0]) is not int:
+               raise TypeError('position must be a tuple of 2 positive integers')
+        if type(position[1]) is not int:
+               raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = position
 
     def area(self):
