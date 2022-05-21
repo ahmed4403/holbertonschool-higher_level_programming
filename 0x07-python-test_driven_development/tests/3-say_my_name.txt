@@ -1,0 +1,27 @@
+The 3-say_my_name module
+======================
+
+Testing import
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("hello", "world")
+My name is hello world
+
+>>> say_my_name(12, "world")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("hello", 12)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name("hello")
+My name is hello 
+
+>>> say_my_name()
+Traceback (most recent call last):
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+>>> say_my_name("hello", "world", "!")
+Traceback (most recent call last):
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
