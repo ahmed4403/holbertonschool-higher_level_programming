@@ -39,4 +39,68 @@ Add negative float to int
 >>> add_integer(-2.50, 1)
 -1
 
-None as an argument
+First argument as None
+>>> add_integer(None, 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+Second argument as None
+>>> add_integer(2, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+Not passing arguments
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Passing too many arguments
+>>> add_integer(1, 2, 3)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Default b value
+>>> add_integer(2)
+100
+
+First argument as a string
+>>> add_integer("hello" , 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+First argument as NaN
+>>> add_integer(float("nan"), 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+First argument as infinity
+>>> add_integer(float("inf"), 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(2, float("nan"))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(2, float("inf"))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(float("-inf"), 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(2, float("-inf"))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
