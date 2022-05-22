@@ -1,6 +1,19 @@
 #!/usr/bin/python3
+'''
+This is a line of text
+write too many lines
+for what is there
+yes it is no it isn't
+'''
+
 
 def matrix_divided(matrix, div):
+    '''
+    This is another line of text
+    make sure that you....
+    the lines must be long
+    it is therefore have to be...
+    '''
     if type(matrix) is not list or not matrix:
         raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
