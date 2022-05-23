@@ -53,7 +53,7 @@ class Rectangle:
             return ""
         seq = ""
         for i in range(self.__height):
-            seq += "#" * self.__width 
+            seq += "#" * self.__width
             if i != self.__height - 1:
                 seq += "\n"
         return seq
