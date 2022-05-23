@@ -68,10 +68,6 @@ class Rectangle:
 
     def __del__(self):
         '''This is a method'''
-        print("Bye rectangle...")
-
-    def __del__(self):
-        '''This is a method'''
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
