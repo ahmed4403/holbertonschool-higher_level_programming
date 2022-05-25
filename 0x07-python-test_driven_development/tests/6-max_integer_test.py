@@ -23,6 +23,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertAlmostEqual(max_integer([1.22, 1.23, 1.24, 1.25]), 1.25)
         self.assertAlmostEqual(max_integer([1, 10, 4.5, 1.25]), 10)
         self.assertAlmostEqual(max_integer([534, 343, 3301, 53, 352]), 3301)
+        self.assertEqual(max_integer([50, 40, 30, 20,]), 50)
         self.assertEqual(max_integer([1]), 1)
         self.assertEqual(max_integer([1, 1, 1, 1, 1]), 1)
         self.assertEqual(max_integer("hello"), "o")
