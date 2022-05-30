@@ -2,6 +2,6 @@
 '''This is a module'''
 
 
-def def is_kind_of_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     '''This is a function'''
     return isinstance(obj, a_class)
