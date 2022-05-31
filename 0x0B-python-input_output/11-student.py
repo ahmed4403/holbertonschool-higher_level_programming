@@ -20,7 +20,7 @@ class Student:
                 newDic[i] = self.__dict__[i]
         return newDic
 
-    def def reload_from_json(self, json):
+    def reload_from_json(self, json):
         '''This is a method'''
         for i, j in json.items():
             setattr(self, i, j)
