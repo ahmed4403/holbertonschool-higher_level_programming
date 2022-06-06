@@ -69,17 +69,24 @@ class Base:
     def to_list(self, cls):
         '''This is a method'''
         if cls.__name__ == "Rectangle":
-            return [self.id, self.width, self.height, self.x, self.y] 
+            return [self.id, self.width, self.height, self.x, self.y]
         elif cls.__name__ == "Square":
             return [self.id, self.size, self.x, self.y]
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
         '''This is a method'''
-        csvArray = [] 
+        csvArray = []
         if list_objs is not None and list_objs:
             for obj in list_objs:
                 csvArray.append(obj.to_list(cls))
         with open(cls.__name__ + ".csv", "w", encoding="utf-8") as f:
             writer = csv.writer(f)
-            writer.writerow(csvArray)
+            for row in csvArray:
+                writer.writerow(row)
+
+#    @classmethod
+#    def load_from_file_csv(cls):
+#        '''This is a method'''
+#        try:
+            
