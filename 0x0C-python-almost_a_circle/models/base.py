@@ -66,27 +66,33 @@ class Base:
         except Exception:
             return []
 
-    def to_list(self, cls):
-        '''This is a method'''
-        if cls.__name__ == "Rectangle":
-            return [self.id, self.width, self.height, self.x, self.y]
-        elif cls.__name__ == "Square":
-            return [self.id, self.size, self.x, self.y]
-
     @classmethod
     def save_to_file_csv(cls, list_objs):
         '''This is a method'''
-        csvArray = []
-        if list_objs is not None and list_objs:
-            for obj in list_objs:
-                csvArray.append(obj.to_list(cls))
         with open(cls.__name__ + ".csv", "w", encoding="utf-8") as f:
-            writer = csv.writer(f)
-            for row in csvArray:
-                writer.writerow(row)
+            if list_objs is not None and list_objs:
+                if cls.__name__ == "Rectangle":
+                    head = ["id", "width", "height", "x", "y"]
+                elif cls.__name__ == "Square":
+                    head = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(f, fieldnames=head)
+                writer.writeheader()
+                for row in list_objs:
+                    writer.writerow(row.to_dictionary())
+            else:
+                f.write("[]")
 
-#    @classmethod
-#    def load_from_file_csv(cls):
-#        '''This is a method'''
-#        try:
-            
+    @classmethod
+    def load_from_file_csv(cls):
+        '''This is a method'''
+        try:
+            with open(cls.__name__ + ".csv", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                delist = []
+                for derow in reader:
+                    for key, value in derow.items():
+                        derow[key] = int(value)
+                    delist.append(cls.create(**derow))
+            return delist
+        except Exception:
+            return []
