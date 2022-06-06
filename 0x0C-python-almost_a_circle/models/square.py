@@ -27,27 +27,27 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         '''This is a method'''
         if args:
-             for i in range(len(args)):
-                 if i == 0:
-                     self.id = args[0]
-                 if i == 1:
-                     self.width = args[1]
-                 if i == 2:
-                     self.x = args[2]
-                 if i == 3:
-                     self.y = args[3]
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[0]
+                if i == 1:
+                    self.width = args[1]
+                if i == 2:
+                    self.x = args[2]
+                if i == 3:
+                    self.y = args[3]
         elif kwargs:
             for key, value in kwargs.items():
-                 if key == "id":
-                     self.id = value
-                 if key == "size":
-                     self.width = value
-                 if key == "x":
-                     self.x = value
-                 if key == "y":
-                     self.y = value 
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.width = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def to_dictionary(self):
         '''This is a method'''
-        return {'id': self.id, 'size': self.width, \
-'x': self.x, 'y': self.y}
+        return {'id': self.id, 'size': self.width,
+                'x': self.x, 'y': self.y}

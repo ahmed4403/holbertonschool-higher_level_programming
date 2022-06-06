@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''This is a module'''
 
-import json 
+import json
 
 
 class Base:
@@ -29,7 +29,7 @@ class Base:
         if list_objs is not None and list_objs:
             for obj in list_objs:
                 jsArray.append(obj.to_dictionary())
-        with open(cls.__name__ + ".json", "w", encoding = "utf-8") as f:
+        with open(cls.__name__ + ".json", "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(jsArray))
 
     @staticmethod
