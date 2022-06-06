@@ -2,6 +2,7 @@
 '''This is a module'''
 
 import json
+import csv
 
 
 class Base:
@@ -64,3 +65,21 @@ class Base:
                 return listOfInstances
         except Exception:
             return []
+
+    def to_list(self, cls):
+        '''This is a method'''
+        if cls.__name__ == "Rectangle":
+            return [self.id, self.width, self.height, self.x, self.y] 
+        elif cls.__name__ == "Square":
+            return [self.id, self.size, self.x, self.y]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''This is a method'''
+        csvArray = [] 
+        if list_objs is not None and list_objs:
+            for obj in list_objs:
+                csvArray.append(obj.to_list(cls))
+        with open(cls.__name__ + ".csv", "w", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(csvArray)
