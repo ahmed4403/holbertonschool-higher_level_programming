@@ -36,7 +36,7 @@ class Base:
     def from_json_string(json_string):
         '''This is a method'''
         if json is None or not json_string:
-            return "[]"
+            return []
         return json.loads(json_string)
 
     @classmethod
